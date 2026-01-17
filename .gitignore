@@ -1,0 +1,34 @@
+# Compiled Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Generated Thrift files
+gen-java/
+
+# Build directories
+target/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+execution.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven/Gradle
+.mvn/
+gradle/
+.gradle/
