@@ -12,16 +12,16 @@ A fault-tolerant distributed key-value store implementation using **Apache Thrif
                     ▲                           ▲
                     │ watch/register            │ watch/register
                     │                           │
-┌───────────────────┴───────────────┐ ┌────────┴───────────────────┐
-│         StorageNode (Primary)     │ │    StorageNode (Backup)    │
+┌───────────────────┴───────────────┐ ┌─────────┴───────────────────┐
+│         StorageNode (Primary)     │ │    StorageNode (Backup)     │
 │  ┌─────────────────────────────┐  │ │  ┌─────────────────────────┐│
 │  │     KeyValueHandler         │  │ │  │     KeyValueHandler     ││
 │  │  ┌───────────────────────┐  │  │ │  │  ┌───────────────────┐  ││
-│  │  │  ConcurrentHashMap    │  │◄─┼─┼──┤  │  ConcurrentHashMap │  ││
-│  │  │   (Key-Value Store)   │  │  │ │  │  │   (Replicated)     │  ││
+│  │  │  ConcurrentHashMap    │  │◄─┼─┼──┤  │  ConcurrentHashMap│  ││
+│  │  │   (Key-Value Store)   │  │  │ │  │  │   (Replicated)    │  ││
 │  │  └───────────────────────┘  │  │ │  │  └───────────────────┘  ││
 │  └─────────────────────────────┘  │ │  └─────────────────────────┘│
-└───────────────────────────────────┘ └────────────────────────────┘
+└───────────────────────────────────┘ └─────────────────────────────┘
                     ▲
                     │ Thrift RPC (get/put)
                     │
